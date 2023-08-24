@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 export class SearchBarComponent {
   searchQuery: string = '';
-  totalResults: number =0;
+  totalResults: number = 0;
   articles: any[] = [
     {
       title: 'Understanding the difference between grid-template and grid-auto',
@@ -20,12 +20,11 @@ export class SearchBarComponent {
         'knew they were to d...',
       title2: 'Recreating the GitHub Contribution Graph with CSS Grid',
     },
-    // Add more articles as needed
   ];
   filteredArticles: any[] = [];
 
   constructor() {
-    this.filteredArticles = this.articles; // Initialize filteredArticles with all articles
+    this.filteredArticles = this.articles;
   }
 
   search(): void {
@@ -51,21 +50,27 @@ export class SearchBarComponent {
   }
   clearSearch(): void {
     this.searchQuery = '';
-    this.search(); // Call search to update filteredArticles based on an empty query
+    this.search();
   }
   updateTotalResults(): void {
     if (this.searchQuery) {
-      this.totalResults = 0; // Reset totalResults to 0
+      this.totalResults = 0;
       for (const article of this.filteredArticles) {
-        this.totalResults += (article.title.match(new RegExp(this.searchQuery, 'gi')) || []).length;
-        this.totalResults += (article.date.match(new RegExp(this.searchQuery, 'gi')) || []).length;
-        this.totalResults += (article.content.match(new RegExp(this.searchQuery, 'gi')) || []).length;
-        this.totalResults += (article.title2.match(new RegExp(this.searchQuery, 'gi')) || []).length;
+        this.totalResults += (
+          article.title.match(new RegExp(this.searchQuery, 'gi')) || []
+        ).length;
+        this.totalResults += (
+          article.date.match(new RegExp(this.searchQuery, 'gi')) || []
+        ).length;
+        this.totalResults += (
+          article.content.match(new RegExp(this.searchQuery, 'gi')) || []
+        ).length;
+        this.totalResults += (
+          article.title2.match(new RegExp(this.searchQuery, 'gi')) || []
+        ).length;
       }
     } else {
-      this.totalResults = 0; // Reset totalResults to 0 when searchQuery is empty
+      this.totalResults = 0;
     }
   }
-  
-  
 }
