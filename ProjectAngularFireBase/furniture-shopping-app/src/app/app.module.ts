@@ -15,6 +15,7 @@ import { SlickCarouselModule } from 'ngx-slick-carousel';
 import { CarouselModule } from '@coreui/angular';
 import { AlertModule } from '@coreui/angular';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -37,6 +38,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     CarouselModule,
     AlertModule,
     BrowserAnimationsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

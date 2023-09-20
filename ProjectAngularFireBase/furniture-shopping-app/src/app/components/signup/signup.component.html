@@ -1,1 +1,68 @@
-<p>signup works!</p>
+<h1>Sign Up</h1>
+<form #signInForm="ngForm" (ngSubmit)="signup(signInForm)">
+  <input
+    ngModel
+    name="name"
+    type="text"
+    class="form-control"
+    placeholder="Your Name"
+    required
+  />
+  <div class="alert alert-danger" *ngIf="signInForm.controls['name'].invalid && signInForm.controls['name'].touched">
+    Name is required.
+  </div>
+  <input
+    ngModel
+    name="email"
+    type="email"
+    class="form-control"
+    placeholder="Email"
+    required
+    email
+  />
+  <div class="alert alert-danger" *ngIf="signInForm.controls['email'].invalid && signInForm.controls['email'].touched">
+    Please enter a valid email address.
+  </div>
+  <input
+    ngModel
+    #pass="ngModel"
+    name="password"
+    type="password"
+    class="form-control"
+    placeholder="Password"
+    required
+    minlength="6"
+  />
+  <div class="alert alert-danger" *ngIf="signInForm.controls['password'].invalid && signInForm.controls['password'].touched">
+    Password must be at least 6 characters long.
+  </div>
+  <input
+    ngModel
+    #confirmPass="ngModel"
+    name="passwordConfirm"
+    type="password"
+    class="form-control"
+    placeholder="Confirm Password"
+    required
+  />
+  <div class="alert alert-danger" *ngIf="confirmPass.touched && confirmPass.value !== pass.value">
+    Password confirmation does not match.
+  </div>
+  <input
+    ngModel
+    name="address"
+    type="text"
+    class="form-control"
+    placeholder="Address"
+    required
+  />
+  <div class="alert alert-danger" *ngIf="signInForm.controls['address'].invalid && signInForm.controls['address'].touched">
+    Address is required.
+  </div>
+  <button
+    class="btn btn-primary"
+    [disabled]="signInForm.invalid || confirmPass.value !== pass.value"
+  >
+    Create Account
+  </button>
+</form>
