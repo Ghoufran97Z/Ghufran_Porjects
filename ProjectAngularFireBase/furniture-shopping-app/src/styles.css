@@ -2,3 +2,6 @@
 app-nav-bar{
     width: 100%;
 }
+@import '~@coreui/coreui/dist/css/coreui.min.css';
+
+

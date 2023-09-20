@@ -1,17 +1,25 @@
-<div class="body">
-  <ngx-slick-carousel class="carousel" [config]="slickCarouselConfig">
-    <div ngxSlickItem *ngFor="let furniture of furnitures">
-      <div class="card">
-        <img
-          [src]="furniture.photoUrl"
-          class="card-img-top"
-          alt="{{ furniture.name }}"
-        />
-        <div class="card-body">
-          <h5 class="card-title">{{ furniture.name }}</h5>
-          <p class="card-text">Price: ${{ furniture.price }}</p>
+<div class="w-25">
+  <c-carousel [animate]="true" [interval]="0" transition="crossfade">
+    <c-carousel-inner>
+      <c-carousel-item *ngFor="let furniture of furnitures">
+        <div class="card">
+          <img [src]="furniture.photoUrl" class="card-img-top sliderImg" loading="lazy" alt="{{ furniture.name }}" />
+          <div class="card-body">
+            <h5 class="card-title">{{ furniture.name }}</h5>
+            <p class="card-text">Price: ${{ furniture.price }}</p>
+          </div>
         </div>
-      </div>
-    </div>
-  </ngx-slick-carousel>
+      </c-carousel-item>
+    </c-carousel-inner>
+    <c-carousel-control
+      [routerLink]
+      caption="Previous"
+      direction="prev"
+    ></c-carousel-control>
+    <c-carousel-control
+      [routerLink]
+      caption="Next"
+      direction="next"
+    ></c-carousel-control>
+  </c-carousel>
 </div>

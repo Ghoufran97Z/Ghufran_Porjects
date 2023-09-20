@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Furniture } from 'src/app/interfaces/furniture.interface';
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -26,17 +27,12 @@ export class HomeComponent implements OnInit {
       name: 'Sofa set',
       price: 1300,
       photoUrl: 'assets/sofaset.jpg',
-    }
+    },
   ];
-  slickCarouselConfig: any = {
-    autoplay: true,
-    arrows: true,
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1
-  };
+
   constructor() {}
-  ngOnInit() {}
+
+  ngOnInit() {
+    console.log('test')
+  }
 }

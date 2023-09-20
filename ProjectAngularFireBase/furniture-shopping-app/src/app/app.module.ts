@@ -12,7 +12,9 @@ import { SignupComponent } from './components/signup/signup.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
-import { CarouselModule } from 'ngx-owl-carousel-o'; 
+import { CarouselModule } from '@coreui/angular';
+
+
 @NgModule({
   declarations: [
     AppComponent,
