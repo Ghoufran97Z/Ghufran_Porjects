@@ -1,0 +1,6 @@
+{
+  "devDependencies": {
+    "@angular/cli": "^16.2.3",
+    "@ngtools/webpack": "^16.2.3"
+  }
+}
