@@ -8,7 +8,13 @@
     placeholder="Your Name"
     required
   />
-  <div class="alert alert-danger" *ngIf="signInForm.controls['name'].invalid && signInForm.controls['name'].touched">
+  <div
+    class="alert alert-danger"
+    *ngIf="
+      signInForm.controls['name']?.invalid &&
+      signInForm.controls['name']?.touched
+    "
+  >
     Name is required.
   </div>
   <input
@@ -20,7 +26,13 @@
     required
     email
   />
-  <div class="alert alert-danger" *ngIf="signInForm.controls['email'].invalid && signInForm.controls['email'].touched">
+  <div
+    class="alert alert-danger"
+    *ngIf="
+      signInForm.controls['email']?.invalid &&
+      signInForm.controls['email']?.touched
+    "
+  >
     Please enter a valid email address.
   </div>
   <input
@@ -33,7 +45,13 @@
     required
     minlength="6"
   />
-  <div class="alert alert-danger" *ngIf="signInForm.controls['password'].invalid && signInForm.controls['password'].touched">
+  <div
+    class="alert alert-danger"
+    *ngIf="
+      signInForm.controls['password']?.invalid &&
+      signInForm.controls['password']?.touched
+    "
+  >
     Password must be at least 6 characters long.
   </div>
   <input
@@ -45,7 +63,10 @@
     placeholder="Confirm Password"
     required
   />
-  <div class="alert alert-danger" *ngIf="confirmPass.touched && confirmPass.value !== pass.value">
+  <div
+    class="alert alert-danger"
+    *ngIf="confirmPass.touched && confirmPass.value !== pass.value"
+  >
     Password confirmation does not match.
   </div>
   <input
@@ -56,7 +77,13 @@
     placeholder="Address"
     required
   />
-  <div class="alert alert-danger" *ngIf="signInForm.controls['address'].invalid && signInForm.controls['address'].touched">
+  <div
+    class="alert alert-danger"
+    *ngIf="
+      signInForm.controls['address']?.invalid &&
+      signInForm.controls['address']?.touched
+    "
+  >
     Address is required.
   </div>
   <button
