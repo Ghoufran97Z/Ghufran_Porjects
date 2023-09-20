@@ -1,1 +1,17 @@
-<p>home works!</p>
+<div class="body">
+  <ngx-slick-carousel class="carousel" [config]="slickCarouselConfig">
+    <div ngxSlickItem *ngFor="let furniture of furnitures">
+      <div class="card">
+        <img
+          [src]="furniture.photoUrl"
+          class="card-img-top"
+          alt="{{ furniture.name }}"
+        />
+        <div class="card-body">
+          <h5 class="card-title">{{ furniture.name }}</h5>
+          <p class="card-text">Price: ${{ furniture.price }}</p>
+        </div>
+      </div>
+    </div>
+  </ngx-slick-carousel>
+</div>

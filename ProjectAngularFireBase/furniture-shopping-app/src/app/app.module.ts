@@ -11,7 +11,7 @@ import { LoginComponent } from './components/login/login.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
-
+import { SlickCarouselModule } from 'ngx-slick-carousel';
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +26,8 @@ import { NavBarComponent } from './components/nav-bar/nav-bar.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgbModule
+    NgbModule,
+    SlickCarouselModule
   ],
   providers: [],
   bootstrap: [AppComponent]
