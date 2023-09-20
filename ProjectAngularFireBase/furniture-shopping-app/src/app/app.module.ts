@@ -13,6 +13,8 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
 import { CarouselModule } from '@coreui/angular';
+import { AlertModule } from '@coreui/angular';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 @NgModule({
@@ -24,14 +26,17 @@ import { CarouselModule } from '@coreui/angular';
     LoginComponent,
     SignupComponent,
     NotFoundComponent,
-    NavBarComponent
+    NavBarComponent,
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
     SlickCarouselModule,
-    CarouselModule
+    CarouselModule,
+    AlertModule,
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

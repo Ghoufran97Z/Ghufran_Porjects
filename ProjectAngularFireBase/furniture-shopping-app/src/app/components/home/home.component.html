@@ -1,12 +1,20 @@
 <div class="w-25">
-  <c-carousel [animate]="true" [interval]="0" transition="crossfade">
+  <c-carousel [animate]="false" [interval]="0" transition="crossfade">
     <c-carousel-inner>
-      <c-carousel-item *ngFor="let furniture of furnitures">
+      <c-carousel-item *ngFor="let furniture of furnitures; index as i">
         <div class="card">
-          <img [src]="furniture.photoUrl" class="card-img-top sliderImg" loading="lazy" alt="{{ furniture.name }}" />
+          <img
+            [src]="furniture.photoUrl"
+            class="card-img-top sliderImg"
+            loading="lazy"
+            alt="{{ furniture.name }}"
+          />
           <div class="card-body">
-            <h5 class="card-title">{{ furniture.name }}</h5>
-            <p class="card-text">Price: ${{ furniture.price }}</p>
+            <h5 class="card-title">{{ furniture.name | titlecase }}</h5>
+            <p class="card-text">Price: {{ furniture.price | currency }}</p>
+            <button class="btn btn-success" (click)="addToCart(i)">
+              Add to Cart
+            </button>
           </div>
         </div>
       </c-carousel-item>

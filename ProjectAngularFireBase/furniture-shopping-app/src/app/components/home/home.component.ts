@@ -31,8 +31,10 @@ export class HomeComponent implements OnInit {
   ];
 
   constructor() {}
-
+  addToCart(index: number) {
+    console.log('item index', this.furnitures[index]);
+  }
   ngOnInit() {
-    console.log('test')
+    console.log('test');
   }
 }
